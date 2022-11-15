@@ -1,0 +1,11 @@
+GET
+{BASE_URL}/api/product/category/6337d792432f43290cd55469
+
+
+
+
+%%%
+# GET
+# /api/product/category/6337d792432f43290cd55469
+
+# Error: java.lang.IllegalArgumentException: Expected URL scheme 'http' or 'https' but no colon was found
