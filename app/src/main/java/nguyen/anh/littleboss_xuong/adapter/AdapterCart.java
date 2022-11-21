@@ -96,60 +96,60 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder> {
                         .show();
             }
         });
-        holder.imgPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int quantity = cart.getQuantity();
-                quantity++;
-                cart.setQuantity(quantity);
-                holder.tvQuantity.setText(quantity+"");
-                double price = Double.parseDouble(cart.getPrice()) * quantity * 1000;
-                cart.setPrice(String.format("%,.0f", price));
-                holder.tvPrice.setText(String.format("%,.0f", price));
-                IRetrofitService iRetrofitService = RetrofitBuilder.createService(IRetrofitService.class);
-                iRetrofitService.updateCart(cart.get_id(),cart.getReceipt_id(),cart.getProduct_id(),cart.getQuantity(),price).enqueue(new Callback<Map<String, Object>>() {
-                    @Override
-                    public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
-                        if (response.isSuccessful()) {
-                            newInstance().updateTotal(carts);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-
-                    }
-                });
-            }
-        });
-        holder.imgMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int quantity = cart.getQuantity();
-                if (quantity > 1) {
-                    quantity--;
-                    cart.setQuantity(quantity);
-                    holder.tvQuantity.setText(quantity+"");
-                    double price = Double.parseDouble(cart.getPrice()) * quantity * 1000;
-                    cart.setPrice(price+"");
-                    holder.tvPrice.setText(String.format("%,.0f", price));
-                    IRetrofitService iRetrofitService = RetrofitBuilder.createService(IRetrofitService.class);
-                    iRetrofitService.updateCart(cart.get_id(),cart.getReceipt_id(),cart.getProduct_id(),cart.getQuantity(),price).enqueue(new Callback<Map<String, Object>>() {
-                        @Override
-                        public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
-                            if (response.isSuccessful()) {
-                                newInstance().updateTotal(carts);
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-
-                        }
-                    });
-                }
-            }
-        });
+//        holder.imgPlus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int quantity = cart.getQuantity();
+//                quantity++;
+//                cart.setQuantity(quantity);
+//                holder.tvQuantity.setText(quantity+"");
+//                double price = Double.parseDouble(cart.getPrice()) * quantity * 1000;
+//                cart.setPrice(String.format("%,.0f", price));
+//                holder.tvPrice.setText(String.format("%,.0f", price));
+//                IRetrofitService iRetrofitService = RetrofitBuilder.createService(IRetrofitService.class);
+//                iRetrofitService.updateCart(cart.get_id(),cart.getReceipt_id(),cart.getProduct_id(),cart.getQuantity(),price).enqueue(new Callback<Map<String, Object>>() {
+//                    @Override
+//                    public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
+//                        if (response.isSuccessful()) {
+//                            newInstance().updateTotal(carts);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<Map<String, Object>> call, Throwable t) {
+//
+//                    }
+//                });
+//            }
+//        });
+//        holder.imgMinus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int quantity = cart.getQuantity();
+//                if (quantity > 1) {
+//                    quantity--;
+//                    cart.setQuantity(quantity);
+//                    holder.tvQuantity.setText(quantity+"");
+//                    double price = Double.parseDouble(cart.getPrice()) * quantity * 1000;
+//                    cart.setPrice(price+"");
+//                    holder.tvPrice.setText(String.format("%,.0f", price));
+//                    IRetrofitService iRetrofitService = RetrofitBuilder.createService(IRetrofitService.class);
+//                    iRetrofitService.updateCart(cart.get_id(),cart.getReceipt_id(),cart.getProduct_id(),cart.getQuantity(),price).enqueue(new Callback<Map<String, Object>>() {
+//                        @Override
+//                        public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
+//                            if (response.isSuccessful()) {
+//                                newInstance().updateTotal(carts);
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void onFailure(Call<Map<String, Object>> call, Throwable t) {
+//
+//                        }
+//                    });
+//                }
+//            }
+//        });
     }
 
     @Override
