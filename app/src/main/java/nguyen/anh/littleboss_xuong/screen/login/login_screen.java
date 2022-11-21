@@ -174,7 +174,7 @@ public class login_screen extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-
+                    Log.e("Login", "onFailure: " + t.getMessage());
                 }
             });
         }

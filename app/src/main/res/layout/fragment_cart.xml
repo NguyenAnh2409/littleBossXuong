@@ -103,17 +103,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/bg_cart"
+            android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+            android:gravity="left|center"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
             android:text="Tiến hành thanh toán"
             android:textColor="@color/white"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:layout_margin="10dp"
-            android:gravity="left|center"
-            android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-            android:paddingLeft="30dp"
-            android:paddingRight="20dp"
-            />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

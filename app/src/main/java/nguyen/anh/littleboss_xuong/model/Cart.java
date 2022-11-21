@@ -7,7 +7,9 @@ public class Cart {
         private String image;
         private int quantity;
         private String price;
+        private String product_id;
         private boolean isCheck;
+        private String receipt_id;
 
         public Cart(String _id, String name, String image, int quantity, String price) {
             this._id = _id;
@@ -18,6 +20,14 @@ public class Cart {
         }
 
     public Cart() {
+    }
+
+    public String getReceipt_id() {
+        return receipt_id;
+    }
+
+    public void setReceipt_id(String receipt_id) {
+        this.receipt_id = receipt_id;
     }
 
     public String get_id() {
@@ -38,6 +48,14 @@ public class Cart {
 
     public String getImage() {
         return image;
+    }
+
+    public String getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
     }
 
     public void setImage(String image) {
@@ -67,5 +85,6 @@ public class Cart {
     public void setCheck(boolean check) {
         isCheck = check;
     }
+
 
 }

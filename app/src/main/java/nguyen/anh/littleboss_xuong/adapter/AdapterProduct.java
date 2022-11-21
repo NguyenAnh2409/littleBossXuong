@@ -47,7 +47,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         //format price to VND currency
         double price = Double.parseDouble(product.getPrice()) * 1000;
         holder.tvPriceProduct.setText(String.format("%,.0f", price) + " đ");
-//        Picasso.get().load(product.getImage()).into(holder.imgProduct);
+        Picasso.get().load(product.getImage()).into(holder.imgProduct);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

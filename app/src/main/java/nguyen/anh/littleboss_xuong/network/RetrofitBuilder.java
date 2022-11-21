@@ -7,7 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitBuilder {
-    private static final String BASE_URL = "http://192.168.31.109:3000/";
+    private static final String BASE_URL = "http://192.168.31.27:3000/";
     private static Retrofit build(){
         Gson gson = new GsonBuilder()
                 .setLenient()
