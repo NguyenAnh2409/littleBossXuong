@@ -138,8 +138,7 @@ public class Fragment_Cart extends Fragment {
     }
 
     private void onClickOrder() {
-        String total1 = String.valueOf(binding.tvTotalPrice.getText().toString().equals("") ? 0 : Double.parseDouble(binding.tvTotalPrice.getText().toString().replace(",", "")));
-        double total = Double.parseDouble(total1.replace(" đ", ""));
+        double total = totalCart.getValue();
         new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
                 .setTitleText("Bạn có muốn đặt hàng?")
                 .setContentText("Tổng tiền: " + String.format("%,.0f", total) + " VNĐ")
